@@ -7,6 +7,9 @@ def qubic_bezier(directional_points, parameter):
     result = (1 - parameter)**3 * P0 + 3 * (1 - parameter)**2 * parameter * P1 + 3 * (1 - parameter) * parameter**2 * P2 + parameter**3 * P3
     return [curve_point for curve_point in result]
 
+def get_directional_points():
+    return [(57.0, 122.0), (172.0, 37.0), (268.0, 123.0), (252.0, 252.0)]
+
 def get_curve(directional_points):
     curve = [];
 
@@ -29,13 +32,14 @@ def draw_directional_lines(directional_points, draw):
     
     return draw
 
-image = Image.new('RGB', (350, 350), (255, 255, 255))
+image = Image.new("RGB", (350, 350), (255, 255, 255))
 draw = ImageDraw.Draw(image)
 
-directional_points = [(57.0, 122.0), (172.0, 37.0), (268.0, 123.0), (252.0, 252.0)]
+directional_points = get_directional_points()
 draw = draw_directional_lines(directional_points, draw)
 
 curve = get_curve(directional_points)
 draw = draw_curve(curve, draw)
 
-image.show()
+# image.show()
+image.save("bezier.jpg")

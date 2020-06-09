@@ -33,17 +33,7 @@ grayscaled_image = get_grayscaled_image(image_pixels, image_width, image_height)
 # grayscaled_image.show()
 grayscaled_image.save("dog_cropped_grayscaled.jpg")
 
-# ============= binarization ==============
 
-def get_binarized_image(image, threshold):
-    image_pixels_array = np.array(image);
-    image_pixels_binarized = (image_pixels_array > threshold) * 255
-
-    return Image.fromarray(np.uint8(image_pixels_binarized))
-
-
-binarized_image = get_binarized_image(grayscaled_image, threshold=160)
-binarized_image.save("dog_cropped_grayscaled_binarized.jpg")
 
 
 
