@@ -2,7 +2,6 @@
 import numpy as np
 from PIL import Image
 
-
 def get_image(path):
     return Image.open(path).convert("L")
 
