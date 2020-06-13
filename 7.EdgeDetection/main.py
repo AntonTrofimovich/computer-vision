@@ -21,7 +21,7 @@ def get_edges(image):
     return convert_pixels_array_to_image(edges)
 
 
-image = get_image("dog_cropped_grayscaled.jpg")
+image = get_image("dog_grayscaled.jpg")
 edges = get_edges(image)
 
-edges.show()
+edges.save("dog_grayscaled_edges.jpg")
